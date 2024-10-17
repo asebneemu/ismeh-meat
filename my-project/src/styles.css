@@ -1,0 +1,62 @@
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 1s forwards; /* 1 saniye süresince yukarıdan inme animasyonu */
+}
+
+.animate-slideOut {
+  animation: slideOut 1s forwards; /* 1 saniye süresince yukarıya kaybolma animasyonu */
+}
+
+
+.fade-in-out-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Resim üzerine tıklamayı engeller */
+}
+
+.fade-in-out-image {
+  width: 30vw; /* Ekran genişliğinin yüzde 30'u */
+  height: auto; /* Genişliğe göre otomatik yükseklik */
+  opacity: 0;
+  animation: fadeInOut 5s ease-in-out forwards;
+}
+
+/* Animasyon tanımı */
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+  }
+  25% {
+      opacity: 1;
+  }
+  75% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
